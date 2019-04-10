@@ -1,14 +1,30 @@
 import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import UserList from "./Users/UserList";
+import { setUsers } from "../store/user/action";
 
-const App = () => {
-  return (
-    <div>
-      <h1>React Redux Sample</h1>
-      <UserList />
-    </div>
-  );
+class App extends React.Component {
+  componentDidMount() {
+    this.props.setUsers();
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>React Redux Sample</h1>
+        <UserList />
+      </div>
+    );
+  }
+}
+
+App.propTypes = {
+  setUsers: PropTypes.func,
 };
 
-export default App;
+export default connect(
+  null,
+  { setUsers }
+)(App);
