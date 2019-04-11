@@ -1,8 +1,8 @@
 {
-  "name": "react-simple-boilerplate",
+  "name": "react-redux-saga-sample",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:yuttasakcom/react-simple-boilerplate.git",
+  "repository": "git@github.com:yuttasakcom/react-redux-saga-sample.git",
   "author": "Yuttasak Pannawat <yuttasakcom@gmail.com>",
   "license": "MIT",
   "scripts": {
