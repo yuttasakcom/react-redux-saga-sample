@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import UserList from "./Users/UserList";
-import { setUsers } from "../store/user/action";
+import { setUsers } from "../actinos/user";
 
 class App extends React.Component {
   componentDidMount() {

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { USER } from "../constants/actionTypes";
 
 export const setUsers = () => async dispatch => {
   const { data } = await axios.get(
@@ -6,7 +7,7 @@ export const setUsers = () => async dispatch => {
   );
 
   dispatch({
-    type: "SET_USERS",
+    type: USER.SET_USERS,
     payload: data,
   });
 };
