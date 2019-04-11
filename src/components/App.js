@@ -3,11 +3,11 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import UserList from "./Users/UserList";
-import { setUsers } from "../actinos/user";
+import { fetchUsers } from "../actinos/user";
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.setUsers();
+    this.props.fetchUsers();
   }
 
   render() {
@@ -21,10 +21,10 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  setUsers: PropTypes.func,
+  fetchUsers: PropTypes.func,
 };
 
 export default connect(
   null,
-  { setUsers }
+  { fetchUsers }
 )(App);
