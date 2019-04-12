@@ -2,8 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import User from "./User";
+import { setUser } from "../../actinos/user";
 
-const UserList = ({ users }) => {
+const UserList = ({ users, setUser }) => {
   return (
     <section>
       <p>User List</p>
@@ -14,14 +15,20 @@ const UserList = ({ users }) => {
           ))}
         </ul>
       )}
+
+      <button onClick={() => setUser()}>set user</button>
     </section>
   );
 };
 
 UserList.propTypes = {
   users: PropTypes.array,
+  setUser: PropTypes.func,
 };
 
 const mapStateToProps = ({ users }) => ({ users });
 
-export default connect(mapStateToProps)(UserList);
+export default connect(
+  mapStateToProps,
+  { setUser }
+)(UserList);
