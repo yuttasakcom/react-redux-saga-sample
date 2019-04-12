@@ -3,7 +3,7 @@ import { createLogger } from "redux-logger";
 import thunk from "redux-thunk";
 import createSagaMiddleware from "redux-saga";
 import { userReducer } from "../reducers/user";
-import { watchUser } from "../saga";
+import rootSaga from "../sagas";
 
 const reducers = combineReducers({
   users: userReducer,
@@ -23,6 +23,6 @@ const enhancer = composeEnhancers(applyMiddleware(...middleware));
 
 const store = createStore(reducers, enhancer);
 
-sagaMiddleware.run(watchUser);
+sagaMiddleware.run(rootSaga);
 
 export default store;
