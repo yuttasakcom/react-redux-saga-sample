@@ -1,6 +1,5 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import { createLogger } from "redux-logger";
-import thunk from "redux-thunk";
 import createSagaMiddleware from "redux-saga";
 import { userReducer } from "../reducers/user";
 import rootSaga from "../sagas";
@@ -12,7 +11,7 @@ const reducers = combineReducers({
 const logger = createLogger();
 const sagaMiddleware = createSagaMiddleware();
 
-const middleware = [logger, thunk, sagaMiddleware];
+const middleware = [logger, sagaMiddleware];
 
 const composeEnhancers =
   typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
